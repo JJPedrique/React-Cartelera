@@ -1,6 +1,6 @@
 import { useConsulta } from '@/shared/hooks/useConsulta'
 import type { Orden } from '../models/pelicula'
-import { buscar, descubrir, obtenerDetalle, obtenerGeneros } from '../services/peliculas.service'
+import { buscar, descubrir, obtenerDetalle, obtenerGeneros } from '../services/peliculas'
 
 // M6 · Hooks de la feature: combinan useConsulta con el servicio.
 // La página ya no sabe de efectos, AbortController ni Axios: solo pide "las películas con estos filtros".
