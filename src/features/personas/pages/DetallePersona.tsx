@@ -2,8 +2,8 @@ import { ArrowLeft } from 'lucide-react'
 import { Link, useParams } from 'react-router'
 import { Button } from '@/components/ui/button'
 import { MensajeError } from '@/shared/components/MensajeError'
-import { EsqueletoFicha, FichaPersona } from '../components/FichaPelicula'
-import { GrillaPeliculas } from '../components/GrillaPeliculas'
+import { EsqueletoFicha, FichaActor } from '../components/FichaActor'
+import { GrillaPeliculas } from '@/features/peliculas/components/GrillaPeliculas'
 import { usePersona } from '../hooks/usePeliculas'
 
 // M8 · Una página con su propia URL: /peliculas/603
@@ -26,7 +26,7 @@ export function DetallePersona() {
         </Link>
       </Button>
 
-      <FichaPersona persona={actor} />
+      <FichaActor persona={actor} />
 
       {actor.movie_credits.cast.length > 0 && (
         <section className="mt-12">

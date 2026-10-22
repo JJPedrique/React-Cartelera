@@ -1,11 +1,11 @@
 // Interfaces: describen la forma de lo que llega de TMDB.
 // Solo declaramos los campos que usamos; TypeScript no se queja del resto.
 
-export interface Person {
+export interface Actor {
     adult:                boolean;
     also_known_as:        string[];
     biography:            string;
-    birthday:             Date;
+    birthday:             string;
     deathday:             null;
     gender:               number;
     homepage:             null;
@@ -18,9 +18,7 @@ export interface Person {
     profile_path:         string;
 }
 
-export type PersonaResumen = Pick<Person, 'id' | 'name' | 'birthday' | 'place_of_birth' | 'biography'| 'profile_path'>
-
-export interface MovieCredits {
+export interface Creditos {
     cast: Cast[];
     crew: Cast[];
     id:   number;
@@ -52,11 +50,6 @@ export type Department = "Crew" | "Directing" | "Production" | "Writing";
 
 export type OriginalLanguage = "en" | "de" | "fr" | "it";
 
-export interface DetallePersona extends Person {
-  movie_credits: MovieCredits; 
+export interface DetallesActor extends Actor { 
+  movie_credits: Creditos; 
 }
-
-export function anio(fecha: string) {
-  return fecha ? fecha.slice(0, 4) : 's/f'
-}
-

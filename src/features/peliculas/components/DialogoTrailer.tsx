@@ -1,7 +1,7 @@
 import { Play } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
-import type { Video } from '../models/pelicula'
+import type { Video } from '../../features/peliculas/models/pelicula'
 
 // Dialog de shadcn en modo "no controlado": el propio Dialog guarda si está abierto.
 // DialogTrigger lo abre; la X o Esc lo cierran. Al cerrarse, el iframe desaparece y el video se detiene.
