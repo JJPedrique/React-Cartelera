@@ -19,21 +19,21 @@ export function Reparto({ actores }: { actores: Credito[] }) {
       <h3 className="mb-3 font-semibold">Reparto</h3>
       <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
         {actores.map((a) => (
-          <Link to={`/personas/${a.id}`} viewTransition className="block">
-            <li key={a.id} className="flex items-center gap-3">
+          <li key={a.id} className="block">    
+            <Link to={`/personas/${a.id}`} viewTransition className="flex items-center gap-3" >
+          
+                  <Avatar className="size-10">
+                    <AvatarImage src={imagen(a.profile_path, 'w185') ?? undefined} alt={a.name} className="object-cover" />
+                    {/* Si la foto no existe o no carga, shadcn muestra el fallback */}
+                    <AvatarFallback>{iniciales(a.name)}</AvatarFallback>
+                  </Avatar>
+                  <div className="min-w-0 text-sm leading-tight">
+                    <p className="truncate font-medium">{a.name}</p>
+                    <p className="truncate text-xs text-muted-foreground">{a.character}</p>
+                  </div>            
               
-                <Avatar className="size-10">
-                  <AvatarImage src={imagen(a.profile_path, 'w185') ?? undefined} alt={a.name} className="object-cover" />
-                  {/* Si la foto no existe o no carga, shadcn muestra el fallback */}
-                  <AvatarFallback>{iniciales(a.name)}</AvatarFallback>
-                </Avatar>
-                <div className="min-w-0 text-sm leading-tight">
-                  <p className="truncate font-medium">{a.name}</p>
-                  <p className="truncate text-xs text-muted-foreground">{a.character}</p>
-                </div>            
-            
-            </li>
-          </Link>
+            </Link>
+          </li>
         ))}
       </ul>
     </section>
